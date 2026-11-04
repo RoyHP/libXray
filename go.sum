@@ -1,5 +1,5 @@
-github.com/RoyHP/Xray-core v1.260327.1-0.20261104191944-fc0469a1b367 h1:uVecGIcdSLFWJ1hfF+aovV/rgskYMH6jU37U5WH65gM=
-github.com/RoyHP/Xray-core v1.260327.1-0.20261104191944-fc0469a1b367/go.mod h1:/Umx7vpU+A78gOOuKl6ESU6eQJ5EBRhwr5cl7+9/drw=
+github.com/RoyHP/Xray-core v1.260327.1-0.20261104192213-1f110340398c h1:0hf7uk8ObIYnSkT2aCk0kyQRjYn0JdFLCoKX8p7u4vY=
+github.com/RoyHP/Xray-core v1.260327.1-0.20261104192213-1f110340398c/go.mod h1:/Umx7vpU+A78gOOuKl6ESU6eQJ5EBRhwr5cl7+9/drw=
 github.com/andybalholm/brotli v1.2.7 h1:UgafRPGMam5ySHfRkhthMqOFA6IFoeF3D7mWIDLjG5A=
 github.com/andybalholm/brotli v1.2.7/go.mod h1:rzTDkvFWvIrjDXZHkuS16NPggd91W3kUSvPlQ1pLaKY=
 github.com/apernet/quic-go v0.63.1-0.20261004180939-a10df75c260c h1:cxK8qTA0YCsj68A7zLYDCfPgMTOyt3ePkHh+oXEmYU0=
