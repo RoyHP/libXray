@@ -5,7 +5,7 @@ go 1.27.3
 require (
 	github.com/metacubex/age v0.0.0-20260603010618-28d156b4ea78
 	github.com/stretchr/testify v1.12.1
-	github.com/xtls/xray-core v1.260327.1-0.20261031132019-a4a3dff5b20c
+	github.com/xtls/xray-core v0.0.0-00010101000000-000000000000
 	golang.org/x/mobile v0.0.0-20261011034528-197770444867
 	golang.org/x/sys v0.49.0
 	google.golang.org/protobuf v1.36.12
@@ -68,4 +68,4 @@ require (
 	lukechampine.com/blake3 v1.4.1 // indirect
 )
 
-replace github.com/xtls/xray-core => github.com/RoyHP/Xray-core v1.260327.1-0.20261104190355-861467137321
+replace github.com/xtls/xray-core => github.com/RoyHP/Xray-core v1.260327.1-0.20261104191944-fc0469a1b367
