@@ -6,7 +6,10 @@ from app.build import Builder
 
 class AppleGoMobileBuilder(Builder):
     def before_build(self):
-        super().before_build()
+        # HexVPN: no download_geo — the clients carry no geo assets and the
+        # framework never embedded them anyway (see distro/distro.go).
+        self.prepare_xray_core()
+        self.init_go_env()
         self.clean_lib_dirs(["LibXray.xcframework"])
         self.prepare_gomobile()
 
@@ -21,7 +24,8 @@ class AppleGoMobileBuilder(Builder):
                     "gomobile",
                     "bind",
                     "-target",
-                    "ios,iossimulator,macos,maccatalyst",
+                    # HexVPN: only the slices the iOS app links.
+                    "ios,iossimulator",
                     "-iosversion",
                     "15.0",
                 ]

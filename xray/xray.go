@@ -6,9 +6,9 @@ import (
 	"strings"
 	"sync"
 
+	_ "github.com/xtls/libxray/distro"
 	"github.com/xtls/libxray/memory"
 	"github.com/xtls/xray-core/core"
-	_ "github.com/xtls/xray-core/main/distro/all"
 )
 
 var (
