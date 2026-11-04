@@ -67,3 +67,5 @@ require (
 	layeh.com/gopher-luar v1.0.11 // indirect
 	lukechampine.com/blake3 v1.4.1 // indirect
 )
+
+replace github.com/xtls/xray-core => github.com/RoyHP/Xray-core v1.260327.1-0.20261104190355-861467137321

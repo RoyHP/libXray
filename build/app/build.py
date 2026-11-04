@@ -94,6 +94,11 @@ class Builder(object):
             )
             if ret.returncode != 0:
                 raise Exception("go mod edit replace failed")
+        elif self.has_fork_replace():
+            # HexVPN: go.mod pins a module-path replace (RoyHP/Xray-core,
+            # branch hexvpn). Keep it; only a local-dir replace is managed
+            # by the `local` build arg.
+            pass
         else:
             ret = subprocess.run(
                 ["go", "mod", "edit", f"-dropreplace={XRAY_CORE_MOD_NAME}"]
@@ -116,6 +121,16 @@ class Builder(object):
         )
         if ret.returncode != 0:
             raise Exception("go mod tidy failed")
+
+    def has_fork_replace(self) -> bool:
+        go_mod = os.path.join(self.lib_dir, "go.mod")
+        if not os.path.exists(go_mod):
+            return False
+        with open(go_mod) as file:
+            for line in file:
+                if line.startswith("replace") and XRAY_CORE_MOD_NAME in line and "=> " in line and "/" in line.split("=>")[1] and not line.split("=>")[1].strip().startswith("."):
+                    return True
+        return False
 
     def download_geo(self):
         os.chdir(self.lib_dir)
