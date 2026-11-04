@@ -31,3 +31,5 @@ test/
 config/
 .DS_Store
 bin/
+hexvpn_bridge/out/
+hexvpn_bridge/.goroot/

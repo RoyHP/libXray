@@ -1,0 +1,4 @@
+module HexVPNTunnelGo {
+    header "libxray_bridge.h"
+    export *
+}
