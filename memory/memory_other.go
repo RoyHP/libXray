@@ -2,4 +2,6 @@
 
 package memory
 
+func Apply()         {}
+func Reset()         {}
 func InitForceFree() {}

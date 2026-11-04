@@ -40,13 +40,15 @@ func RunXray(xrayJSON string) error {
 	if coreServer != nil {
 		return ErrAlreadyRunning
 	}
-	memory.InitForceFree()
+	memory.Apply()
 	server, err := newXrayInstance(xrayJSON)
 	if err != nil {
+		memory.Reset()
 		return err
 	}
 	if err = server.Start(); err != nil {
 		_ = server.Close()
+		memory.Reset()
 		return err
 	}
 	coreServer = server
@@ -69,6 +71,9 @@ func StopXray() error {
 	if coreServer != nil {
 		err := coreServer.Close()
 		coreServer = nil
+		// The GC / GOMAXPROCS policy is Xray's; the WireGuard engine that
+		// shares this runtime wants the defaults back.
+		memory.Reset()
 		if err != nil {
 			return err
 		}

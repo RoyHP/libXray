@@ -38,7 +38,7 @@ build() {
     CGO_ENABLED=1 GOOS=ios GOARCH=arm64 \
     CC="xcrun --sdk $sdk clang" CXX="xcrun --sdk $sdk clang++" \
     CGO_CFLAGS="$flags" CGO_LDFLAGS="$flags" \
-    go build -trimpath -ldflags="-s -w -buildid=" -buildmode=c-archive \
+    go build -trimpath -ldflags="-w -buildid=" -buildmode=c-archive \
       -o "$out/$platform/libwg-go.a" ./hexvpn_bridge )
   rm -f "$out/$platform/libwg-go.h"
 }
