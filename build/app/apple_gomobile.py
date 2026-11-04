@@ -24,8 +24,14 @@ class AppleGoMobileBuilder(Builder):
                     "gomobile",
                     "bind",
                     "-target",
-                    # HexVPN: only the slices the iOS app links.
-                    "ios,iossimulator",
+                    # HexVPN: only the slices the iOS app links (no x86_64
+                    # simulator, no macOS/Catalyst).
+                    "ios/arm64,iossimulator/arm64",
+                    # Strip symbol tables + DWARF from the Go archive; the
+                    # extension must stay small (jetsam counts mapped text
+                    # too) and nothing debugs Go frames from Xcode.
+                    "-trimpath",
+                    "-ldflags=-s -w -buildid=",
                     "-iosversion",
                     "15.0",
                 ]
