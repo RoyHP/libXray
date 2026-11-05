@@ -33,3 +33,4 @@ config/
 bin/
 hexvpn_bridge/out/
 hexvpn_bridge/.goroot/
+hexvpn_bridge/.goroot-android/
